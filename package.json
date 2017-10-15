@@ -1,0 +1,20 @@
+{
+  "name": "googlehome-irkit",
+  "version": "1.0.0",
+  "description": "Google Homeから IRKit を操作するための Google Cloud Functions",
+  "main": "dist/index.js",
+  "author": "shun91",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
+  },
+  "scripts": {
+    "dev": "npm run build && functions-emulator deploy postIRKit -l=dist --trigger-http && functions-emulator call postIRKit",
+    "build": "babel src --out-dir dist"
+  }
+}
